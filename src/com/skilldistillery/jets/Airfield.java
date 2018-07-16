@@ -31,6 +31,11 @@ public class Airfield {
 		return jetsList;	
 	}
 
+	public int getNumJets() {
+		return i;
+	}
+
+
 	
 	
 }

@@ -14,6 +14,14 @@ public abstract class Jet {
 		this.price = price;
 	}
 
+	public Jet() {
+
+	}
+
+	public Jet(String model2) {
+
+	}
+
 	public void fly() {
 
 	}
