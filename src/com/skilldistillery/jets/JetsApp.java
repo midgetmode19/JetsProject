@@ -93,6 +93,8 @@ public class JetsApp {
 			} else if (input == 7) {
 				// user adds a jet to the airfield (stretch goal: sub-menu to
 				// choose type of jet)
+				addUserJet();
+				
 			} else if (input == 8) {
 				System.out.println("Goodbye");
 				sc.close();
@@ -186,6 +188,7 @@ public class JetsApp {
 		}
 		return index;
 	}
+
 	public void listJets() {
 		Jet[] jets = airField.getJets();
 		for (Jet jet : jets) {
@@ -193,6 +196,35 @@ public class JetsApp {
 				System.out.println(jet.getModel());
 			}
 		}
+	}
+	public void addUserJet() {
+		Scanner newInput = new Scanner(System.in);
+		System.out.println("Model: ");
+		String model = newInput.nextLine();
+		System.out.println("Speed in MPH: ");
+		double speed = newInput.nextDouble();
+		System.out.println("Range in miles: ");
+		int range = newInput.nextInt();
+		System.out.println("Cost: ");
+		long price = newInput.nextLong();
+		System.out.println("Is this a Fighter Jet (1) or Cargo plane (2)?");
+		System.out.println("Enter 0 to cancel.");
+		int jetType = newInput.nextInt();
+			if (jetType == 1) {
+				Jet userFighterJet = new FighterJet(model, speed, range, price);
+				airField.addJet(userFighterJet);
+			}
+			else if(jetType == 2) {
+				Jet userCargoJet = new CargoPlane(model, speed, range, price);
+				airField.addJet(userCargoJet);
+			}
+			else if(jetType == 0) {
+				System.out.println("You chose not to add a jet.");
+			}
+			else {
+				System.out.println("That is not a valid selection.");
+			}
+		newInput.close();
 	}
 
 }

@@ -1,7 +1,5 @@
 package com.skilldistillery.jets;
 
-import java.util.Arrays;
-
 public class Airfield {
 	private Jet[] jets = new Jet[20];
 	private int i = 0;
