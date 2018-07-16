@@ -213,6 +213,7 @@ public class JetsApp {
 			if (jetType == 1) {
 				Jet userFighterJet = new FighterJet(model, speed, range, price);
 				airField.addJet(userFighterJet);
+				//((FighterJet)userFighterJet).fight();
 			}
 			else if(jetType == 2) {
 				Jet userCargoJet = new CargoPlane(model, speed, range, price);
@@ -224,7 +225,7 @@ public class JetsApp {
 			else {
 				System.out.println("That is not a valid selection.");
 			}
-		newInput.close();
+			//don't close scanner here //newInput.close();
 	}
 
 }
